@@ -4,13 +4,22 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit from beryllium device
 $(call inherit-product, device/xiaomi/beryllium/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some pixys stuff.
+$(call inherit-product, vendor/pixys/config/common_full_phone.mk)
+
+# PixysOS Specific Flags
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_USES_BLUR := false
+TARGET_GAPPS_ARCH := arm64
+TARGET_BUILD_APERTURE_CAMERA := false
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_beryllium
+PRODUCT_NAME := pixys_beryllium
 PRODUCT_DEVICE := beryllium
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := POCO F1
